@@ -1,14 +1,14 @@
-const express = require('express');         //1
-const bodyParser = require('body-parser');        //2
-const route = require('./routes/route.js');        //3
-const { default: mongoose } = require('mongoose');       //4
+const express = require('express');         
+const bodyParser = require('body-parser');        
+const route = require('./routes/route.js');        
+const { default: mongoose } = require('mongoose');       
 const app = express();
 
-app.use(bodyParser.json());                        //5
-app.use(bodyParser.urlencoded({ extended: true }));         //6
+app.use(bodyParser.json());                        
+app.use(bodyParser.urlencoded({ extended: true }));        
 
 
-mongoose.connect("", {                  //11-15
+mongoose.connect("mongodb://localhost:27017/Blogs", {                  
     useNewUrlParser: true
 })
 .then( () => console.log("MongoDb is connected"))

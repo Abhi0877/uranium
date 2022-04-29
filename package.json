@@ -4,13 +4,17 @@
   "description": "\"project32\"",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js"
   },
-  "author": "rahul,nitesh,abhishek,mitesh",
+  "author": "rahul,nitesh,abhishek Gupta,mitesh",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.0",
+    "email-validator": "^2.0.4",
     "express": "^4.18.0",
-    "mongoose": "^6.3.1"
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.1",
+    "nodemon": "^2.0.15"
   }
 }
