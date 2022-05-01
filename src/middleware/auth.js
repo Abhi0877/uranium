@@ -3,6 +3,7 @@ const Blogs=require("../models/blogsModel")
 var jwt = require('jsonwebtoken');
 
 let authrAuth=async function(req,res,next){
+    try{
     let token=req.headers["x-api-key"]
     let authordata=jwt.verify(token,"functionUpgroupnumber32")
     if(!authordata){
@@ -18,9 +19,14 @@ let authrAuth=async function(req,res,next){
         return res.status(403).send({ status: true, msg: "Not Valid Author"})
     }
     next()
+     }catch(err){
+        return res.status(500).send({err: err})
+        
+    }
 }
 
 let authrAuth2=async function(req,res,next){
+    try{
     let token=req.headers["x-api-key"]
 
     let authordata=jwt.verify(token,"functionUpgroupnumber32")
@@ -34,6 +40,10 @@ let authrAuth2=async function(req,res,next){
     
 
     next()
+}catch(err){
+    return res.status(500).send({err: err})
+    
+}
 }
 
 
